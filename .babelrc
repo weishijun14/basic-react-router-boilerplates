@@ -8,6 +8,8 @@
         },
         "debug": false
       }
+    ],[
+      "react"
     ]
   ],
   "plugins": ["transform-runtime"],
