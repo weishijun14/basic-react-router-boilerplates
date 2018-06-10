@@ -1,20 +1,20 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
-  mode: 'production',
+  mode: "production",
   entry: {
-    vendor: ['react', '@reach/router']
+    vendor: ["react", "@reach/router"]
   },
   output: {
-    path: path.join(__dirname, './dist/static/'),
-    filename: '[name].dll.js',
-    library: '[name]_library'
+    path: path.join(__dirname, "./dist/static/"),
+    filename: "[name].dll.js",
+    library: "[name]_library"
   },
   plugins: [
     new webpack.DllPlugin({
-      path: path.join(__dirname, '.', '[name]-manifest.json'),
-      name: '[name]_library',
+      path: path.join(__dirname, ".", "[name]-manifest.json"),
+      name: "[name]_library",
       context: __dirname
     })
   ],
