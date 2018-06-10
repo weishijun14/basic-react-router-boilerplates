@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   entry: "./index.js",
@@ -25,5 +26,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./index.html"
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      test: path.resolve(__dirname, "src/test/")
+    }
+  }
 };

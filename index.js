@@ -4,6 +4,7 @@ import { Router, Link } from "@reach/router";
 import Home from "./Home";
 import OtherSite from "./OtherSite";
 import clapping from "./src/asset/001-clapping.svg";
+import test from "test/testAlias";
 
 const App = ({ children }) => (
   <div>
