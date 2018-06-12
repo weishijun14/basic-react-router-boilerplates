@@ -17,8 +17,15 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: 'svg-sprite-loader',
-        options: {}
+        use: [
+          { loader: 'svg-sprite-loader', options: {} },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              svgo: {}
+            }
+          }
+        ]
       }
     ]
   },

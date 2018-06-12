@@ -12,6 +12,6 @@
       "react"
     ]
   ],
-  "plugins": ["transform-runtime", "dynamic-import-webpack"],
+  "plugins": ["transform-runtime", "dynamic-import-webpack", "react-loadable/babel"],
   "minified": false
 }

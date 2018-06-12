@@ -19,10 +19,10 @@ module.exports = merge(common, {
     new webpack.DllReferencePlugin({
       context: __dirname,
       manifest: require('./dist/static/vendor-manifest.json')
-    }),
-    new AddAssetHtmlPlugin({
-      filepath: path.resolve(__dirname, './dist/static/vendor.dll.js'),
-      includeSourcemap: false
     })
+    // new AddAssetHtmlPlugin({
+    //   filepath: path.resolve(__dirname, './dist/static/vendor.dll.js'),
+    //   includeSourcemap: false
+    // })
   ]
 });
