@@ -17,7 +17,7 @@ module.exports = merge(common, {
     }),
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require('./vendor-manifest.json')
+      manifest: require('./dist/static/vendor-manifest.json')
     }),
     new BundleAnalyzerPlugin()
   ],

@@ -5,7 +5,11 @@ class OtherSite extends React.Component {
     super(props);
   }
   render() {
-    return <h1>OtherSiteOtherSiteOtherSiteOtherSite</h1>;
+    return (
+      <div>
+        <h1>Other - site</h1>
+      </div>
+    );
   }
 }
 

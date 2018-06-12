@@ -12,6 +12,6 @@
       "react"
     ]
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": ["transform-runtime", "dynamic-import-webpack"],
   "minified": false
 }
