@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'production',
   entry: {
-    vendor: ['react', '@reach/router']
+    vendor: ['react', '@reach/router', 'mo-js']
   },
   output: {
     path: path.join(__dirname, './dist/static/'),
@@ -12,6 +13,7 @@ module.exports = {
     library: '[name]_library'
   },
   plugins: [
+    new CleanWebpackPlugin(['dist/static']),
     new webpack.DllPlugin({
       path: path.join(__dirname, './dist/static/', '[name]-manifest.json'),
       name: '[name]_library',
@@ -20,5 +22,8 @@ module.exports = {
   ],
   optimization: {
     minimize: true
+  },
+  performance: {
+    hints: false
   }
 };
