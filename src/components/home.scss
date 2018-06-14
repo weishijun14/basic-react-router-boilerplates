@@ -1,0 +1,39 @@
+.button:hover{
+  border: 1px solid salmon !important;
+  transition: border-color 0.3s ease-in;
+}
+
+button{
+	outline:none;
+}
+
+.button:hover:after {
+    animation: shockwave2 1s ease-in infinite;
+}
+.button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50%;
+    width: 98px;
+    height: 98px;
+}
+
+$btn-dimension: 80px;
+$primary-color: rgba(189,195,199 ,1);
+$secondary-color: salmon;
+@keyframes shockwave2 {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 2px $secondary-color;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    box-shadow: 0 0 50px darken($secondary-color, 20%), inset 0 0 10px $secondary-color;
+  }
+}

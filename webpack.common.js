@@ -1,26 +1,39 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             cacheDirectory: true
           }
         }
       },
       {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ['./src']
+            }
+          }
+        ]
+      },
+      {
         test: /\.svg$/,
         use: [
-          { loader: "svg-sprite-loader", options: {} },
+          { loader: 'svg-sprite-loader', options: {} },
           {
-            loader: "image-webpack-loader",
+            loader: 'image-webpack-loader',
             options: {
               svgo: {}
             }
@@ -32,12 +45,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: "./src/index.html"
+      template: './src/index.html'
     })
   ],
   resolve: {
     alias: {
-      test: path.resolve(__dirname, "src/test/")
+      test: path.resolve(__dirname, 'src/test/')
     }
   }
 };

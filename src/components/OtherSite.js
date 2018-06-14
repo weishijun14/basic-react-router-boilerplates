@@ -11,7 +11,7 @@ class OtherSite extends React.Component {
         <h1>Other - site</h1>
         <svg viewBox={clap2.viewBox}>
           <use xlinkHref={'#' + clap2.id} />
-        </svg>;
+        </svg>
       </div>
     );
   }
